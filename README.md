@@ -10,7 +10,7 @@ and text formats. Gathering, classifying, and pruning a comphrensive meme datase
 To form my dataset, I used a lightly modified version of [hardikvava's google image downloader](https://github.com/hardikvasa/google-images-download) to gather 10,000 "meme-like" images from google. I then pruned these images by hand
 to form an inital dataset of representative memes. As of now, I am only analyzing memes which follow the classic [top text bottom text](https://imgflip.com/memegenerator) style. Please message me if you'd like a copy of the dataset.
 
-I am currently seeking out larger, more comphrensive meme datasets to give the algorithim. Ideally these would not require extensive human modification.  
+I am currently seeking out larger, more comphrensive meme datasets. Ideally these would not require extensive human modification, and represent a wide array of meme types and styles.  
 
 
 
