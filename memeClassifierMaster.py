@@ -1,5 +1,10 @@
 from memeScraper import *
 
+#See my issue on the google image downloader before using this class. https://github.com/hardikvasa/google-images-download/issues/25
+#Per the issue, make sure you use the for loop to search for memes. Just using the method with a long list of keywords will provide useless results 
+
+
+
 # This list is used to search keywords. You can edit this list to search for google images of your choice. You can simply add and remove elements of the list.
 #search_keyword = ['memes']
 #clean_secondary_keywords = ['forest','house','woods','football','wallpaper','band','restroom','family','football','lamp','religion','mountain','snowboarding','dad','school','teacher','happy','cool people','bus','city','movie','old','smile','park','pretty','flower','tradition','israel','Stalingrad','t-72 main battle tank','money','federal reserve','computer','programming','nice','fbi','things','mother','tears','anguish','theater','korea','tiger tank','me 262','xbox one','fog','landscape']
