@@ -1,0 +1,14 @@
+
+import os
+import shutil
+
+#put dirs here
+directory = ('')
+newDir = ''
+
+i = 0
+for folder in os.listdir(directory):
+    for picture in os.listdir(directory + folder):
+        oldDir = directory + folder + '/' + picture
+        shutil.move(oldDir, newDir + picture + str(i) + ".jpg") #Formatting of the name doesn't matter, just need to be able to shunt them all off to the same folder
+    i = i + 1
