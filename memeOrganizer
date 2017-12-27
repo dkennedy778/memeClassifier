@@ -26,6 +26,7 @@ def organizeCentralizedMemes():
         shutil.move(directory + random_filename, newDir +random_filename)  # Formatting of the name doesn't matter, just need to be able to shunt them all off to the same folder
         i = i + 1
 
+#input directories here 
 directory = ('')
 newDir = ''
 organizeCentralizedMemes()
