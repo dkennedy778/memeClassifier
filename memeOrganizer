@@ -26,6 +26,6 @@ def organizeCentralizedMemes():
         shutil.move(directory + random_filename, newDir +random_filename)  # Formatting of the name doesn't matter, just need to be able to shunt them all off to the same folder
         i = i + 1
 
-directory = ('D:/Users/Derek/PostGrad/memeClassifier/notMemes/')
-newDir = 'D:/Users/Derek/PostGrad/memeClassifier/notMemesRandomized/'
+directory = ('')
+newDir = ''
 organizeCentralizedMemes()
