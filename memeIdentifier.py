@@ -17,7 +17,8 @@ import os
 
 datagen = ImageDataGenerator(rotation_range=40,width_shift_range=.2,height_shift_range=.2,rescale=1./255,shear_range=.2,zoom_range=.2,horizontal_flip=True,fill_mode='nearest')
 
-#inputDir = "D:\Users\Derek\PostGrad\memeClassifier\sampleMemesMain"
+#sample permutation code, the implemented generators handle this automatically 
+#inputDir = ""
 # for image in os.listdir(inputDir):
 #     load the image
     # img = load_img(image)
@@ -72,15 +73,17 @@ try:
 # this is a generator that will read pictures found in
 # subfolers of 'data/train', and indefinitely generate
 # batches of augmented image data
+
+#Input your source directories here 
     train_generator = train_datagen.flow_from_directory(
-       'D:/Users/Derek/PostGrad/memeClassifier/train',  # this is the target directory
+       '',  # this is the target directory
         target_size=(150, 150),  # all images will be resized to 150x150
         batch_size=batch_size,
         class_mode='binary')  # since we use binary_crossentropy loss, we need binary labels
 
 # this is a similar generator, for validation data
     validation_generator = test_datagen.flow_from_directory(
-        'D:/Users/Derek/PostGrad/memeClassifier/validation',
+        '',
         target_size=(150, 150),
         batch_size=batch_size,
         class_mode='binary')
