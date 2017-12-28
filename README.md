@@ -1,5 +1,5 @@
 # memeClassifier
-a ML algorithm which determines if images are memes or not
+An ML algorithm which determines if images are memes or not
 
 This project using a machine learning process sourced from [keras's blog](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) to determine if images are memes or not. 
 The long term goals of the project is to derive a ML algorithim that can detect memes with a success rate of over 95%, and then use an OCR algorithim on a large dataset of memes to analyze the characteristics of their text.
