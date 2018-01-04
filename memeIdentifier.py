@@ -1,10 +1,13 @@
 #this class made with help from https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+#and https://www.youtube.com/watch?v=bfQBPNDy5EM&feature=youtu.be
 from keras.preprocessing.image import ImageDataGenerator, array_to_img,img_to_array,load_img
 from keras.models import Sequential
+from keras.models import Model
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 import numpy as np
 import os
+
 
 #sample datagen which does the following
 #1.Randomly rotating the image within 40 degrees of the origin
@@ -17,8 +20,7 @@ import os
 
 datagen = ImageDataGenerator(rotation_range=40,width_shift_range=.2,height_shift_range=.2,rescale=1./255,shear_range=.2,zoom_range=.2,horizontal_flip=True,fill_mode='nearest')
 
-#sample permutation code, the implemented generators handle this automatically 
-#inputDir = ""
+#inputDir = "D:\Users\Derek\PostGrad\memeClassifier\sampleMemesMain"
 # for image in os.listdir(inputDir):
 #     load the image
     # img = load_img(image)
@@ -57,7 +59,7 @@ model.add(Activation('sigmoid'))
 model.compile(loss='binary_crossentropy',
               optimizer='rmsprop',
               metrics=['accuracy'])
-batch_size = 16
+batch_size = 32
 
 # this is the augmentation configuration we will use for training
 train_datagen = ImageDataGenerator(
@@ -69,30 +71,30 @@ train_datagen = ImageDataGenerator(
 # this is the augmentation configuration we will use for testing:
 # only rescaling
 test_datagen = ImageDataGenerator(rescale=1./255)
-try:
+#try:
 # this is a generator that will read pictures found in
 # subfolers of 'data/train', and indefinitely generate
 # batches of augmented image data
-
-#Input your source directories here 
-    train_generator = train_datagen.flow_from_directory(
-       '',  # this is the target directory
+train_generator = train_datagen.flow_from_directory(
+       'D:/Users/Derek/PostGrad/memeClassifier/train',  # this is the target directory
         target_size=(150, 150),  # all images will be resized to 150x150
         batch_size=batch_size,
         class_mode='binary')  # since we use binary_crossentropy loss, we need binary labels
 
 # this is a similar generator, for validation data
-    validation_generator = test_datagen.flow_from_directory(
-        '',
+validation_generator = test_datagen.flow_from_directory(
+        'D:/Users/Derek/PostGrad/memeClassifier/validation',
         target_size=(150, 150),
         batch_size=batch_size,
         class_mode='binary')
-    model.fit_generator(
+model.fit_generator(
         train_generator,
         steps_per_epoch=2000 // batch_size,
         epochs=50,
         validation_data=validation_generator,
         validation_steps=800 // batch_size)
-    model.save_weights('first_try.h5')  # always save your weights after training or during training
-except Exception as e:
-    print ("error", e)
+test_generator = test_datagen.flow_from_directory('D:\Users\Derek\PostGrad\memeClassifier\memeClassifierCode\e1')
+model.save_weights('first_try.h5')  # always save your weights after training or during training
+scores = model.predict_generator(test_generator,steps=1,verbose = 0)
+#except Exception as e:
+ #   print ("error", e)
