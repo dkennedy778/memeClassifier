@@ -1,6 +1,7 @@
 from memeScraper import *
 
 #See my issue on the google image downloader before using this class. https://github.com/hardikvasa/google-images-download/issues/25
+#This issue has been resolved, making my work around pretty superfluous
 #Per the issue, make sure you use the for loop to search for memes. Just using the method with a long list of keywords will provide useless results 
 
 
