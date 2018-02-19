@@ -31,6 +31,7 @@
 # SOFTWARE.
 
 #This class is a lightly modified version of https://github.com/hardikvasa/google-images-download, using their python 3.6 fork.
+#My pull version is pretty old, and this issue has made alot of the extra work I did superfluous
 
 import time  # Importing the time library to check the time of code execution
 import sys  # Importing the System Library
